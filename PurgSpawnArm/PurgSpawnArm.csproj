@@ -52,6 +52,8 @@
       <Reference Include="UnityEngine.UI">
         <HintPath>..\Lib\UnityEngine.UI.dll</HintPath>
       </Reference>
+	  <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.1" PrivateAssets="all" />
+	  <Publicize Include="Assembly-CSharp" PublicizeTarget="Fields, Types, Methods" />
     </ItemGroup>
 
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
