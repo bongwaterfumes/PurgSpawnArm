@@ -36,5 +36,5 @@ Adds enemies and bosses from Project Purgatorio to the Spawner Arm.
   * Fixed Craven spawn direction
   * Made Carcass mod a dependency to properly include it in the roster, it's not actually required for the mod to function but it's a Purgatorio enemy so I'd suggest keeping it
  
-  * * 1.2.0
+* 1.2.0
   * Added support for The Cyber Grind gamemode (thank you Lion8cake)
