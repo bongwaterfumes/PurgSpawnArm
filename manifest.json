@@ -1,6 +1,6 @@
 {
     "name": "PurgatorioEnemies",
-    "version_number": "1.2.0",
+    "version_number": "1.2.1",
     "website_url": "https://github.com/DoodleEh/PurgSpawnArm",
     "description": "Adds enemies and bosses from Project Purgatorio to the Spawner Arm and The Cyber Grind. Configurable.",
     "dependencies": [
