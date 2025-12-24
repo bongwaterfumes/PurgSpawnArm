@@ -9,14 +9,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Xml.Linq;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 
 namespace PurgSpawnArm
 {
     [HarmonyPatch]
-    [BepInPlugin(GUID, "Purg Spawn Arm", "1.0.0")]
+    [BepInPlugin(GUID, "Purg Spawn Arm", "1.2.2")]
 	[BepInDependency(PluginConfiguratorController.PLUGIN_GUID)]
 	public class Plugin : BaseUnityPlugin
     {

@@ -231,7 +231,7 @@ namespace PurgatorioCyberGrind.Patches
 		private static bool GetEnemiesCapSpecials(int num8, EndlessGrid self)
 		{
 			int indexOfEnemyType = self.GetIndexOfEnemyType(self.prefabs.specialEnemies[num8].enemyType);
-			return CapSpecialsAmount(num8, self.spawnedEnemyTypes[indexOfEnemyType].amount, ref self.prefabs, self.currentWave) > self.spawnedEnemyTypes[indexOfEnemyType].amount;
+			return CapSpecialsAmount(num8, self.spawnedEnemyTypes[indexOfEnemyType].amount + 1, ref self.prefabs, self.currentWave) > self.spawnedEnemyTypes[indexOfEnemyType].amount;
 		}
 
 		public static int CapSpecialsAmount(int target, int amount, ref PrefabDatabase prefabs, int currentWave)
