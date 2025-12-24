@@ -38,3 +38,9 @@ Adds enemies and bosses from Project Purgatorio to the Spawner Arm.
  
 * 1.2.0
   * Added support for The Cyber Grind gamemode (thank you Lion8cake)
+
+* 1.2.1
+  * Fixed improper changelog formatting.
+
+* 1.2.2
+  * Fixed a bug that caused specials (Mindflayers, Ferrymen, Insurrectionists) to not spawn if the mod is enabled.
