@@ -16,6 +16,7 @@ Adds enemies and bosses from Project Purgatorio to the Spawner Arm.
 * Hinestraza for reworking Unfortunate Development attacks
 * bongwaterfumes (me) for creating Indulgence and majorly polishing and balancing the enemies included in this pack
 * BlooGoober and Duv for some sounds and audio assistance
+* Lion8cake for doing The Cyber Grind implementation
 
 * HUGE THANKS TO BOBOT, DRAGHTNIM AND ROBI FOR HELPING OUT WITH IMPLEMENTATION OUTSIDE OF ANGRY!! WOULDN'T BE POSSIBLE WITHOUT EM FUCK YEAH BABY
 
@@ -23,7 +24,7 @@ Adds enemies and bosses from Project Purgatorio to the Spawner Arm.
 * 1.0.0
   * Initial upload (this won't include Rubicon and Envy enemies for a little while)
 
-* 1.0.1
+* 1.1.0
   * Added Unfortunate Development boss
   * Added Enoch, King Nothing boss
     * Note: Unfortunate Development (and likely Enoch too) will be undergoing a rework eventually, so their current behaviour could be subject to change
@@ -34,3 +35,6 @@ Adds enemies and bosses from Project Purgatorio to the Spawner Arm.
   * Corrected Craven health bar name
   * Fixed Craven spawn direction
   * Made Carcass mod a dependency to properly include it in the roster, it's not actually required for the mod to function but it's a Purgatorio enemy so I'd suggest keeping it
+ 
+* 1.2.0
+  * Added support for The Cyber Grind gamemode (thank you Lion8cake)
