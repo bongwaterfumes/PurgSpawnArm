@@ -97,8 +97,8 @@ namespace PurgatorioCyberGrind.Systems
 				{
 					CybergrindSpawnType.melee => (int)CybergrindEnemyCatagories.MeleeEnemies.Mannequin,
 					CybergrindSpawnType.projectile => (int)CybergrindEnemyCatagories.ProjectileEnemies.Gutterman,
-					CybergrindSpawnType.uncommon => (int)CybergrindEnemyCatagories.UncommonEnemies.Guttertank,
-					CybergrindSpawnType.special => (int)CybergrindEnemyCatagories.SpecialEnemies.Ferryman,
+					CybergrindSpawnType.uncommon => (int)CybergrindEnemyCatagories.UncommonEnemies.Deathcatcher,
+					CybergrindSpawnType.special => (int)CybergrindEnemyCatagories.SpecialEnemies.MirrorReaper,
 					_ => 0,
 				};
 			}
