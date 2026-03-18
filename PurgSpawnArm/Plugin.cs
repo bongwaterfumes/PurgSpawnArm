@@ -14,7 +14,7 @@ using UnityEngine;
 namespace PurgSpawnArm
 {
     [HarmonyPatch]
-    [BepInPlugin(GUID, "Purg Spawn Arm", "1.2.2")]
+    [BepInPlugin(GUID, "Purg Spawn Arm", "1.2.3")]
 	[BepInDependency(PluginConfiguratorController.PLUGIN_GUID)]
 	public class Plugin : BaseUnityPlugin
     {

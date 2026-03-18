@@ -1,63 +1,76 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFramework>netstandard2.1</TargetFramework>
-        <Nullable>enable</Nullable>
-    </PropertyGroup>
+   <PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<AssemblyName>PurgSpawnArm</AssemblyName>
+		<Product>PurgSpawnArm</Product>
+		<GUID>"purg.PurgSpawnArm"</GUID>
+		<Nullable>enable</Nullable>
+		<LangVersion>13.0</LangVersion>
+		<RootNamespace>PurgSpawnArm</RootNamespace>
+		<UltrakillDir>C:\Program Files (x86)\Steam\steamapps\common\ULTRAKILL\</UltrakillDir>
+		<!-- Ensure that this has BepInEx installed -->
+		<CopyToBepInExPluginsDir>true</CopyToBepInExPluginsDir>
 
-    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    </PropertyGroup>
+		<RestoreAdditionalProjectSources>
+			https://nuget.bepinex.dev/v3/index.json;
+			https://nuget.samboy.dev/v3/index.json
+		</RestoreAdditionalProjectSources>
+		<GenerateDependencyFile>false</GenerateDependencyFile>
+		<RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
-    <ItemGroup>
-      <Reference Include="0Harmony">
-        <HintPath>..\Lib\0Harmony.dll</HintPath>
-      </Reference>
-      <Reference Include="Assembly-CSharp">
-        <HintPath>..\Lib\Assembly-CSharp.dll</HintPath>
-      </Reference>
-      <Reference Include="BepInEx">
-        <HintPath>..\Lib\BepInEx.dll</HintPath>
-      </Reference>
-      <Reference Include="NavMeshComponents">
-        <HintPath>D:\SteamLibrary\steamapps\common\ULTRAKILL\ULTRAKILL_Data\Managed\NavMeshComponents.dll</HintPath>
-      </Reference>
-      <Reference Include="Unity.Addressables">
-        <HintPath>D:\SteamLibrary\steamapps\common\ULTRAKILL\ULTRAKILL_Data\Managed\Unity.Addressables.dll</HintPath>
-      </Reference>
-      <Reference Include="Unity.AI.Navigation">
-        <HintPath>D:\SteamLibrary\steamapps\common\ULTRAKILL\ULTRAKILL_Data\Managed\Unity.AI.Navigation.dll</HintPath>
-      </Reference>
-      <Reference Include="Unity.ResourceManager">
-        <HintPath>D:\SteamLibrary\steamapps\common\ULTRAKILL\ULTRAKILL_Data\Managed\Unity.ResourceManager.dll</HintPath>
-      </Reference>
-      <Reference Include="Unity.TextMeshPro">
-        <HintPath>..\Lib\Unity.TextMeshPro.dll</HintPath>
-      </Reference>
-      <Reference Include="UnityEngine">
-        <HintPath>..\Lib\UnityEngine.dll</HintPath>
-      </Reference>
-      <Reference Include="UnityEngine.AIModule">
-        <HintPath>D:\SteamLibrary\steamapps\common\ULTRAKILL\ULTRAKILL_Data\Managed\UnityEngine.AIModule.dll</HintPath>
-      </Reference>
-      <Reference Include="UnityEngine.AssetBundleModule">
-        <HintPath>D:\SteamLibrary\steamapps\common\ULTRAKILL\ULTRAKILL_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
-      </Reference>
-      <Reference Include="UnityEngine.AudioModule">
-        <HintPath>D:\SteamLibrary\steamapps\common\ULTRAKILL\ULTRAKILL_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
-      </Reference>
-      <Reference Include="UnityEngine.CoreModule">
-        <HintPath>..\Lib\UnityEngine.CoreModule.dll</HintPath>
-      </Reference>
-      <Reference Include="UnityEngine.UI">
-        <HintPath>..\Lib\UnityEngine.UI.dll</HintPath>
-      </Reference>
-	  <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.1" PrivateAssets="all" />
-	  <Publicize Include="Assembly-CSharp" PublicizeTarget="Fields, Types, Methods" />
-    </ItemGroup>
+	<Import Project="Properties/DeployToPlugins.targets" />
 
-    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-      <Exec Command="copy /Y &quot;$(TargetPath)&quot; &quot;C:\Users\user\Desktop\ULTRAKILL Debug Install\BepInEx\plugins\shitfuck&quot;" />
-    </Target>
+	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
+		<PackageReference Include="BepInEx.Core" Version="5.4.21" />
+		<PackageReference Include="UnityEngine.Modules" Version="2022.3.29" IncludeAssets="compile" />
+
+		<Reference Include="Assembly-CSharp">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\ULTRAKILL\ULTRAKILL_Data\Managed\Assembly-CSharp.dll</HintPath>
+		</Reference>
+		<Reference Include="Mono.Cecil">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\ULTRAKILL\BepInEx\core\Mono.Cecil.dll</HintPath>
+		</Reference>
+		<Reference Include="Mono.Cecil.Mdb">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\ULTRAKILL\BepInEx\core\Mono.Cecil.Mdb.dll</HintPath>
+		</Reference>
+		<Reference Include="Mono.Cecil.Rocks">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\ULTRAKILL\BepInEx\core\Mono.Cecil.Rocks.dll</HintPath>
+		</Reference>
+		<Reference Include="Mono.Security">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\ULTRAKILL\ULTRAKILL_Data\Managed\Mono.Security.dll</HintPath>
+		</Reference>
+		<Reference Include="MonoMod.RuntimeDetour">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\ULTRAKILL\BepInEx\core\MonoMod.RuntimeDetour.dll</HintPath>
+		</Reference>
+		<Reference Include="MonoMod.Utils">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\ULTRAKILL\BepInEx\core\MonoMod.Utils.dll</HintPath>
+		</Reference>
+		<Reference Include="PluginConfigurator">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\ULTRAKILL\BepInEx\plugins\PluginConfigurator\PluginConfigurator.dll</HintPath>
+		</Reference>
+		<Reference Include="PluginConfiguratorComponents">
+		  <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\ULTRAKILL\BepInEx\plugins\PluginConfigurator\PluginConfiguratorComponents.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Addressables">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\ULTRAKILL\ULTRAKILL_Data\Managed\Unity.Addressables.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.ResourceManager">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\ULTRAKILL\ULTRAKILL_Data\Managed\Unity.ResourceManager.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.AssetBundleModule">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\ULTRAKILL\ULTRAKILL_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
+		</Reference>
+
+		<PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.1" PrivateAssets="all" />
+		<Publicize Include="Assembly-CSharp" PublicizeTarget="Fields, Types, Methods" />
+	</ItemGroup>
 
 </Project>
